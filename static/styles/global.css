@@ -91,3 +91,7 @@ button, a, [role="button"] {
     margin: 8px 0;
   }
 }
+
+html {
+  overflow-y: scroll;
+}
