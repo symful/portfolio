@@ -11,6 +11,8 @@ const SKILLS = [
   { name: "AssemblyScript", level: 65, category: "language" },
   { name: "C#", level: 75, category: "language" },
   { name: "Go", level: 70, category: "language" },
+  { name: "SQL", level: 70, category: "database" },
+  { name: "MongoDB", level: 90, category: "database" },
 ];
 
 export default function SkillsMatrix() {
@@ -24,7 +26,7 @@ export default function SkillsMatrix() {
         </h2>
 
         <div class="flex flex-wrap justify-center gap-4 mb-12">
-          {["all", "frontend", "backend", "mobile", "language"].map((
+          {["all", "frontend", "backend", "mobile", "language", "database"].map((
             category,
           ) => (
             <button
