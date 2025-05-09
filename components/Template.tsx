@@ -37,6 +37,8 @@ export default function Template(
         <title>Kemal Ardian | {pageTitle}</title>
         <meta name="title" content={`Kemal Ardian | ${pageTitle}`} />
         <meta name="description" content={pageDescription} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#000000" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
