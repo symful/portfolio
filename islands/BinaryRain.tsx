@@ -20,7 +20,7 @@ function BinaryRain() {
             top: `-20vh`,
             left: `${Math.random() * 100}vw`,
             animationDuration: `${Math.random() * 3 + 2}s`,
-            fontSize: `${Math.random() * 20 + 10}px`,
+            fontSize: `${Math.random() * 15 + 5}px`,
             opacity: Math.random(),
           }}
         >

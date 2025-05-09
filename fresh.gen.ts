@@ -12,8 +12,6 @@ import * as $manifest_json from "./routes/manifest.json.ts";
 import * as $projects from "./routes/projects.tsx";
 import * as $skills from "./routes/skills.tsx";
 import * as $BinaryRain from "./islands/BinaryRain.tsx";
-import * as $ClientNavLink from "./islands/ClientNavLink.tsx";
-import * as $ContactInformation from "./islands/ContactInformation.tsx";
 import * as $Header from "./islands/Header.tsx";
 import * as $Hero from "./islands/Hero.tsx";
 import * as $MenuToggle from "./islands/MenuToggle.tsx";
@@ -35,8 +33,6 @@ const manifest = {
   },
   islands: {
     "./islands/BinaryRain.tsx": $BinaryRain,
-    "./islands/ClientNavLink.tsx": $ClientNavLink,
-    "./islands/ContactInformation.tsx": $ContactInformation,
     "./islands/Header.tsx": $Header,
     "./islands/Hero.tsx": $Hero,
     "./islands/MenuToggle.tsx": $MenuToggle,
