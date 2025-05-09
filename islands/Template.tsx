@@ -3,7 +3,7 @@ import BinaryRain from "./BinaryRain.tsx";
 import Header from "./Header.tsx";
 import Hero from "./Hero.tsx";
 import SkillsMatrix from "./SkillsMatrix.tsx";
-import ContactInformation from "./ContactInformation.tsx";
+import ContactInformation from "../components/ContactInformation.tsx";
 import ProjectList from "../components/ProjectList.tsx";
 import { useRef, useState } from "preact/hooks";
 
