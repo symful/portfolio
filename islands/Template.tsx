@@ -1,16 +1,29 @@
 import { Head } from "$fresh/runtime.ts";
-import BinaryRain from "../components/BinaryRain.tsx";
-import Header from "../components/Header.tsx";
-import Hero from "../islands/Hero.tsx";
-import SkillsMatrix from "../islands/SkillsMatrix.tsx";
-import ContactInformation from "../islands/ContactInformation.tsx";
-import ProjectList from "../islands/ProjectList.tsx";
+import BinaryRain from "./BinaryRain.tsx";
+import Header from "./Header.tsx";
+import Hero from "./Hero.tsx";
+import SkillsMatrix from "./SkillsMatrix.tsx";
+import ContactInformation from "./ContactInformation.tsx";
+import ProjectList from "../components/ProjectList.tsx";
+import { useRef, useState } from "preact/hooks";
 
 export const routeList = {
-  "Home": Hero,
-  "Skills": SkillsMatrix,
-  "Contact": ContactInformation,
-  "Projects": ProjectList,
+  "Home": {
+    Component: Hero,
+    href: "/",
+  },
+  "Skills": {
+    Component: SkillsMatrix,
+    href: "/skills",
+  },
+  "Contact": {
+    Component: ContactInformation,
+    href: "/contact",
+  },
+  "Projects": {
+    Component: ProjectList,
+    href: "/projects",
+  },
 };
 
 const previewConfig = {
@@ -23,14 +36,34 @@ const previewConfig = {
   color: "#000000",
 };
 
+export type SetRoute = (route: keyof typeof routeList) => void;
+
 export default function Template(
   { route }: { route: keyof typeof routeList },
 ) {
-  const Element = routeList[route];
-  const pageTitle = route === "Home" ? "Your All-Stack Programmer" : route;
-  const pageDescription = route === "Home"
+  const [currentRoute, setCurrentRoute] = useState<keyof typeof routeList>(
+    route,
+  );
+  const [transitionStage, setTransitionStage] = useState("enter");
+  const [displayRoute, setDisplayRoute] = useState(route);
+  const { Component } = routeList[displayRoute];
+  const componentRef = useRef<HTMLDivElement>(null);
+
+  const pageDescription = displayRoute === "Home"
     ? previewConfig.description
-    : `${previewConfig.description} - ${route} page`;
+    : `${previewConfig.description} - ${displayRoute} page`;
+  const pageTitle = displayRoute === "Home"
+    ? "Your All-Stack Programmer"
+    : displayRoute;
+
+  const handleRouteChange = (routeName: keyof typeof routeList) => {
+    setTransitionStage("exit");
+    setTimeout(() => {
+      setDisplayRoute(routeName);
+      setTransitionStage("enter");
+      setCurrentRoute(routeName);
+    }, 1000);
+  };
 
   return (
     <>
@@ -79,12 +112,20 @@ export default function Template(
         <link rel="manifest" href="/manifest.json" />
       </Head>
 
-      <Header active={route} />
+      <BinaryRain key="binary-rain" />
 
-      <Element />
+      <Header
+        active={currentRoute}
+        setRoute={handleRouteChange}
+      />
 
-      <div class="fixed top-0 left-0 w-full h-full overflow-hidden z-[-1] opacity-20">
-        <BinaryRain />
+      <div
+        ref={componentRef}
+        class={`transition-opacity duration-[1s] ${
+          transitionStage === "enter" ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <Component setRoute={handleRouteChange} />
       </div>
     </>
   );

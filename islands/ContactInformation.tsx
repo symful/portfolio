@@ -32,10 +32,10 @@ export default function ContactInformation() {
           </div>
 
           {/* Discord */}
-          <div class="group flex items-center gap-4 p-4 border border-gray-800 rounded-lg hover:border-neonPurple hover:shadow-[0_0_15px_#9D00FF] transition-all duration-300">
-            <div class="p-3 bg-gray-800 rounded-lg group-hover:bg-neonPurple group-hover:bg-opacity-20 transition-colors">
+          <div class="group flex items-center gap-4 p-4 border border-gray-800 rounded-lg hover:border-blurple hover:shadow-[0_0_15px_#9D00FF] transition-all duration-300">
+            <div class="p-3 bg-gray-800 rounded-lg group-hover:bg-blurple group-hover:bg-opacity-20 transition-colors">
               <svg
-                class="w-6 h-6 text-neonPurple"
+                class="w-6 h-6 text-blurple"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >

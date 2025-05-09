@@ -14,6 +14,7 @@ export default {
           electric: "#00F5FF",
           neonPurple: "#9D00FF",
           hotPink: "#FF00F5",
+          blurple: "#5865F2",
         },
         boxShadow: {
           neon:

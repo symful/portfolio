@@ -1,5 +1,6 @@
 import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
+import { SetRoute } from "./Template.tsx";
 
 const TEXTS = [
   "Flutter",
@@ -12,7 +13,7 @@ const TEXTS = [
   "MongoDB",
 ];
 
-export default function Hero() {
+export default function Hero({ setRoute }: { setRoute: SetRoute }) {
   const currentText = useSignal("");
   const currentIndex = useSignal(0);
   const isDeleting = useSignal(false);
@@ -45,9 +46,10 @@ export default function Hero() {
           <span class="text-electric">Your</span> All-Stack Programmer
         </h2>
 
-        <div class="flex items-center gap-2 mb-8">
-          <div class="w-4 h-4 rounded-full bg-electric animate-pulse"></div>
-          <p class="text-white font-mono">
+        <div class="flex items-baseline gap-2 mb-8">
+          <div class="w-3 h-3 rounded-full bg-electric animate-pulse flex-shrink-0 mt-1">
+          </div>
+          <p class="text-white font-mono leading-tight">
             I work with <span class="text-electric">{currentText}</span>
             <span class="animate-blink">|</span>
           </p>
@@ -57,12 +59,20 @@ export default function Hero() {
           <a
             class="px-6 py-3 bg-electric text-black font-pixel rounded hover:(transform scale-105)"
             href="/projects"
+            onClick={(e) => {
+              e.preventDefault();
+              setRoute("Projects");
+            }}
           >
             View Projects
           </a>
           <a
             class="px-6 py-3 border-2 border-electric text-white font-pixel rounded hover:(bg-electric bg-opacity-20)"
             href="/contact"
+            onClick={(e) => {
+              e.preventDefault();
+              setRoute("Contact");
+            }}
           >
             Contact Me
           </a>
