@@ -26,20 +26,22 @@ export default function SkillsMatrix() {
         </h2>
 
         <div class="flex flex-wrap justify-center gap-4 mb-12">
-          {["all", "frontend", "backend", "mobile", "language", "database"].map((
-            category,
-          ) => (
-            <button
-              onClick={() => setActiveCategory(category)}
-              class={`px-4 py-2 rounded-full font-pixel ${
-                activeCategory === category
-                  ? "bg-electric text-black"
-                  : "text-white border border-electric"
-              }`}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </button>
-          ))}
+          {["all", "frontend", "backend", "mobile", "language", "database"].map(
+            (
+              category,
+            ) => (
+              <button
+                onClick={() => setActiveCategory(category)}
+                class={`px-4 py-2 rounded-full font-pixel ${
+                  activeCategory === category
+                    ? "bg-electric text-black"
+                    : "text-white border border-electric"
+                }`}
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </button>
+            ),
+          )}
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

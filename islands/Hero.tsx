@@ -1,7 +1,16 @@
 import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
 
-const TEXTS = ["Flutter", "Next.JS", "Deno", "Node.JS", "Bun", "TypeScript", "SQL", "MongoDB"];
+const TEXTS = [
+  "Flutter",
+  "Next.JS",
+  "Deno",
+  "Node.JS",
+  "Bun",
+  "TypeScript",
+  "SQL",
+  "MongoDB",
+];
 
 export default function Hero() {
   const currentText = useSignal("");
