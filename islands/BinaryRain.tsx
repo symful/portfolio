@@ -34,14 +34,10 @@ function BinaryRain() {
         {`
       @keyframes fall {
         0% {
-          transform: translateY(-${globalThis.outerHeight / 2}px);
-        }
-        30% {
-          opacity: 0.5;
+          transform: translateY(-50vh);
         }
         100% {
-          opacity: 0;
-          transform: translateY(${globalThis.outerHeight * 2.5}px);
+          transform: translateY(200vh);
         }
       }
       .animate-fall {
