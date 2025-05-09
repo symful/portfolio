@@ -50,7 +50,7 @@ export default function SkillsMatrix() {
           ).map((skill) => (
             <div class="p-4 border border-gray-800 rounded-lg hover:(border-electric shadow-neon)">
               <h3
-                class="text-white font-pixel text-xl mb-2 truncate"
+                class="text-white font-pixel text-xl mb-2 truncate md:!text-xl"
                 style={{
                   fontSize: `clamp(0.875rem, ${
                     13 / skill.name.length
