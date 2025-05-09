@@ -23,6 +23,7 @@ export default function Template(
     image: null,
     url: "https://kemal.deno.dev/",
     twitterHandle: null,
+    color: "#000000",
   };
   const Element = routeList[route];
   const pageTitle = route === "Home" ? "Your All-Stack Programmer" : route;
@@ -38,7 +39,7 @@ export default function Template(
         <meta name="title" content={`Kemal Ardian | ${pageTitle}`} />
         <meta name="description" content={pageDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content={previewConfig.color} />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
