@@ -1,4 +1,4 @@
-import BinaryRain from "../islands/BinaryRain.tsx";
+import BinaryRain from "../components/BinaryRain.tsx";
 
 export default function binary() {
   return <BinaryRain />;

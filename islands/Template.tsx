@@ -1,5 +1,5 @@
 import { Head } from "$fresh/runtime.ts";
-import BinaryRain from "./BinaryRain.tsx";
+import BinaryRain from "../components/BinaryRain.tsx";
 import Header from "./Header.tsx";
 import Hero from "./Hero.tsx";
 import SkillsMatrix from "./SkillsMatrix.tsx";
