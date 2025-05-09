@@ -84,10 +84,10 @@ export default function ContactInformation() {
               <EmailSVG />
             </div>
             <div class="flex-1">
-              <h3 class="text-gray-400 font-pixel text-sm group-hover:text-hotPink transition-colors">
+              <h3 class="text-gray-400 font-pixel group-hover:text-hotPink transition-colors">
                 Email
               </h3>
-              <p class="text-white group-hover:text-hotPink transition-colors">
+              <p class="text-white text-xs md:text-base group-hover:text-hotPink transition-colors">
                 kemalardian17@gmail.com
               </p>
             </div>

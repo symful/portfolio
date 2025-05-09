@@ -6,6 +6,7 @@ import SkillsMatrix from "./SkillsMatrix.tsx";
 import ContactInformation from "../components/ContactInformation.tsx";
 import ProjectList from "../components/ProjectList.tsx";
 import { useRef, useState } from "preact/hooks";
+import AboutMe from "../components/AboutMe.tsx";
 
 export const routeList = {
   "Home": {
@@ -23,6 +24,10 @@ export const routeList = {
   "Projects": {
     Component: ProjectList,
     href: "/projects",
+  },
+  "About Me": {
+    Component: AboutMe,
+    href: "/aboutme",
   },
 };
 
