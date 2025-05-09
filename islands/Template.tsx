@@ -117,20 +117,22 @@ export default function Template(
         <link rel="manifest" href="/manifest.json" />
       </Head>
 
-      <BinaryRain key="binary-rain" />
+      <div class="relative min-h-screen">
+        <BinaryRain key="binary-rain" />
 
-      <Header
-        active={currentRoute}
-        setRoute={handleRouteChange}
-      />
+        <Header
+          active={currentRoute}
+          setRoute={handleRouteChange}
+        />
 
-      <div
-        ref={componentRef}
-        class={`transition-opacity duration-[1s] ${
-          transitionStage === "enter" ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <Component setRoute={handleRouteChange} />
+        <div
+          ref={componentRef}
+          class={`transition-opacity duration-[1s] ${
+            transitionStage === "enter" ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <Component setRoute={handleRouteChange} />
+        </div>
       </div>
     </>
   );

@@ -11,7 +11,7 @@ function BinaryRain() {
   );
 
   return (
-    <div className="absolute w-full h-screen overflow-hidden font-mono text-cyan-400 pointer-events-none">
+    <div className="absolute flex w-full h-full overflow-hidden font-mono text-cyan-400 pointer-events-none">
       {binaryDigits.map((digit, index) => (
         <span
           key={index}
@@ -19,7 +19,9 @@ function BinaryRain() {
           style={{
             top: `-20vh`,
             left: `${Math.random() * 100}vw`,
-            animationDuration: `${Math.random() * 3 + 2}s`,
+            animationDuration: `${
+              Math.random() * 10 * globalThis.outerHeight / 1000 + 5
+            }s`,
             fontSize: `${Math.random() * 15 + 5}px`,
             opacity: Math.random(),
           }}
@@ -31,15 +33,19 @@ function BinaryRain() {
       <style>
         {`
       @keyframes fall {
-      0% {
-      transform: translateY(-100%);
-      }
-      100% {
-      transform: translateY(100vh);
-      }
+        0% {
+          transform: translateY(-${globalThis.outerHeight / 2}px);
+        }
+        30% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(${globalThis.outerHeight * 2.5}px);
+        }
       }
       .animate-fall {
-      animation: fall linear infinite;
+        animation: fall linear infinite;
       }
       `}
       </style>
