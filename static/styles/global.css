@@ -85,3 +85,9 @@
 button, a, [role="button"] {
   -webkit-tap-highlight-color: transparent;
 }
+
+@media (max-width: 768px) {
+  .relative.block {
+    margin: 8px 0;
+  }
+}

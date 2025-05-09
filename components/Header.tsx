@@ -38,7 +38,7 @@ export default function Header({ active }: HeaderProps) {
             {menuItems.map((item) => (
               <ClientNavLink
                 href={item.href}
-                class={`relative block px-6 py-4 md:py-2 font-pixel transition-all duration-300 group overflow-hidden ${
+                class={`relative block px-4 py-2 md:px-6 md:py-2 font-pixel transition-all duration-300 group overflow-hidden ${
                   active === item.name
                     ? "text-electric shadow-[0_0_10px_#00F5FF]"
                     : "text-white hover:text-electric"
