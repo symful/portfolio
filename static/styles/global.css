@@ -81,3 +81,7 @@
     transform: translateY(0);
   }
 }
+
+button, a, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}

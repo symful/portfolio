@@ -13,6 +13,7 @@ import * as $skills from "./routes/skills.tsx";
 import * as $ClientNavLink from "./islands/ClientNavLink.tsx";
 import * as $ContactInformation from "./islands/ContactInformation.tsx";
 import * as $Hero from "./islands/Hero.tsx";
+import * as $MenuToggle from "./islands/MenuToggle.tsx";
 import * as $ProjectList from "./islands/ProjectList.tsx";
 import * as $SkillsMatrix from "./islands/SkillsMatrix.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -32,6 +33,7 @@ const manifest = {
     "./islands/ClientNavLink.tsx": $ClientNavLink,
     "./islands/ContactInformation.tsx": $ContactInformation,
     "./islands/Hero.tsx": $Hero,
+    "./islands/MenuToggle.tsx": $MenuToggle,
     "./islands/ProjectList.tsx": $ProjectList,
     "./islands/SkillsMatrix.tsx": $SkillsMatrix,
   },

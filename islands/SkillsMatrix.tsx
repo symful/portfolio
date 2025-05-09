@@ -23,7 +23,7 @@ export default function SkillsMatrix() {
           <span class="text-electric">Tech</span> Stack
         </h2>
 
-        <div class="flex justify-center gap-4 mb-12">
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
           {["all", "frontend", "backend", "mobile", "language"].map((
             category,
           ) => (
@@ -45,7 +45,17 @@ export default function SkillsMatrix() {
             activeCategory === "all" || skill.category === activeCategory
           ).map((skill) => (
             <div class="p-4 border border-gray-800 rounded-lg hover:(border-electric shadow-neon)">
-              <h3 class="text-white font-pixel text-xl mb-2">{skill.name}</h3>
+              <h3
+                class="text-white font-pixel text-xl mb-2 truncate"
+                style={{
+                  fontSize: `clamp(0.875rem, ${
+                    13 / skill.name.length
+                  }rem, 1.25rem)`,
+                }}
+                title={skill.name}
+              >
+                {skill.name}
+              </h3>
               <div class="w-full bg-gray-800 rounded-full h-2.5">
                 <div
                   class="h-2.5 rounded-full bg-gradient-to-r from-neonPurple to-electric"
